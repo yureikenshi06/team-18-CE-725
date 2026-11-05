@@ -57,5 +57,5 @@ def build_memo(o, th: Thresholds, break_even=None, tornado_rows=None, warnings=(
         L.extend(f"- {w}" for w in ws)
     L.append("")
     L.append("Limitations: single phase, single tax rate with no loss carry-forward, no RERA escrow modelling, GST treated as pass-through, "
-             "inputs are user-supplied and unverified unless sourced.")
+             "inputs are user-supplied assumptions.")
     return rec, "\n".join(L)
