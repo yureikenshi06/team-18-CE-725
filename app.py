@@ -8,8 +8,7 @@ from memo import Thresholds, build_memo
 
 st.set_page_config(page_title="Real Estate Feasibility Tool", layout="wide")
 st.title("Real Estate Project Feasibility Appraisal")
-st.caption("CE725 Construction Economics and Finance, Topic 2. All inputs are editable. Defaults are the group's approved benchmark case; "
-           "figures marked unverified have not been checked against primary sources.")
+st.caption("CE725 Construction Economics and Finance, Topic 2. All inputs are editable. )
 
 d = Inputs()
 with st.sidebar:
@@ -19,7 +18,7 @@ with st.sidebar:
         fsi = st.number_input("FSI", 0.5, 10.0, d.fsi, 0.1)
         cr = st.slider("Carpet to built-up ratio", 0.5, 0.9, d.carpet_ratio, 0.01)
         land = st.number_input("Land price (Rs per sq ft of plot)", 0.0, 1e6, float(d.land_price), 500.0)
-        stamp = st.number_input("Stamp duty incl. metro cess (%) [unverified]", 0.0, 15.0, d.stamp_duty * 100, 0.5) / 100
+        stamp = st.number_input("Stamp duty incl. metro cess (%)", 0.0, 15.0, d.stamp_duty * 100, 0.5) / 100
     with st.expander("Costs", True):
         cc = st.number_input("Construction cost (Rs per sq ft built-up)", 0.0, 50000.0, float(d.construction_cost), 100.0)
         appr = st.number_input("Approvals and premiums (% of land + construction)", 0.0, 100.0, d.approvals * 100, 1.0) / 100
@@ -35,7 +34,7 @@ with st.sidebar:
         lr = st.number_input("Construction loan rate (% a year, nominal)", 0.0, 40.0, d.loan_rate * 100, 0.5) / 100
         cap = st.number_input("Maximum loan (Rs crore, 0 = no limit)", 0.0, 10000.0, 0.0, 5.0)
         dr = st.number_input("Discount rate (% a year, effective)", 0.0, 50.0, d.discount_rate * 100, 0.5) / 100
-        tax = st.number_input("Income tax rate (%) [unverified]", 0.0, 60.0, d.tax_rate * 100, 0.5) / 100
+        tax = st.number_input("Income tax rate (%) ", 0.0, 60.0, d.tax_rate * 100, 0.5) / 100
     with st.expander("Decision thresholds (assumptions)", False):
         t_irr = st.number_input("Minimum equity IRR (% a year)", 0.0, 100.0, 15.0, 1.0) / 100
         t_poc = st.number_input("Minimum profit on cost (%)", 0.0, 200.0, 20.0, 1.0) / 100
@@ -103,7 +102,7 @@ with tab4:
 - Single project phase, one tax rate, no loss carry-forward; tax is paid once at the end of the horizon.
 - GST is treated as a pass-through collected from buyers and is not a project cost.
 - No RERA escrow modelling (see Topic 14). Collections follow a construction-linked plan.
-- Sources are mostly secondary (news and lender articles). Stamp duty, GST and income tax rates are unverified against primary sources.
+- Sources are mostly secondary (news and lender articles). .
 - IRR can be undefined or have several roots when the cash flow changes sign more than once; the tool warns when this happens.
 - Do not rely on this tool for a real investment decision without independent checking of every input.
 """)
