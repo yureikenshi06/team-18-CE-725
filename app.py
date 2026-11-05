@@ -8,7 +8,7 @@ from memo import Thresholds, build_memo
 
 st.set_page_config(page_title="Real Estate Feasibility Tool", layout="wide")
 st.title("Real Estate Project Feasibility Appraisal")
-st.caption("CE725 Construction Economics and Finance, Topic 2. All inputs are editable. )
+st.caption("CE725 Construction Economics and Finance, Topic 2. All inputs are editable. ")
 
 d = Inputs()
 with st.sidebar:
